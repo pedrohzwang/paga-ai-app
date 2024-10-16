@@ -1,15 +1,17 @@
-import { Text, View } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { Home } from "./screen/Home/Home";
+import { Settings } from "./screen/Settings/Settings";
 
 export default function Index() {
+  const Tab = createBottomTabNavigator();
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+    // <NavigationContainer>
+    <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Settings" component={Settings} />
+    </Tab.Navigator>
+    // </NavigationContainer>
   );
 }
