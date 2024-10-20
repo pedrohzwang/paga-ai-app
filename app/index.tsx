@@ -1,5 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
+import { NativeBaseProvider } from "native-base";
+import { IconHome } from "./components/icons/IconHome";
+import { IconSettings } from "./components/icons/IconSettings";
 import { Home } from "./screen/Home/Home";
 import { Settings } from "./screen/Settings/Settings";
 
@@ -8,10 +10,26 @@ export default function Index() {
 
   return (
     // <NavigationContainer>
-    <Tab.Navigator initialRouteName="Home">
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Settings" component={Settings} />
-    </Tab.Navigator>
+    <NativeBaseProvider>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen
+          name="Despesas"
+          component={Home}
+          options={{
+            tabBarIcon: ({ size }) => <IconHome size={size} />,
+            headerShown: false,
+          }}
+        />
+        <Tab.Screen
+          name="Configurações"
+          component={Settings}
+          options={{
+            tabBarIcon: ({ size }) => <IconSettings size={size} />,
+            headerShown: false,
+          }}
+        />
+      </Tab.Navigator>
+    </NativeBaseProvider>
     // </NavigationContainer>
   );
 }
