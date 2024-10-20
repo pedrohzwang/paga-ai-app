@@ -1,6 +1,6 @@
 import { Icon } from "native-base";
 import { G, Path } from "react-native-svg";
-import { CustomIconProps } from "./CustomIcon.type";
+import { CustomIconProps } from "./CutomIcon.type";
 
 export function IconSettings({ size }: CustomIconProps) {
   return (

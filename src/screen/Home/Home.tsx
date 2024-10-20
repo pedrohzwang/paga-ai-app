@@ -9,7 +9,7 @@ export function Home() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text>Edit app/index.tsx to edit this epaa.</Text>
     </View>
   );
 }
